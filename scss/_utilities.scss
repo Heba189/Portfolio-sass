@@ -1,0 +1,206 @@
+.hidden {
+  display: none !important;
+}
+
+.section {
+  // background-color: $bg-dark2;
+  min-height: 100vh;
+  display: block;
+  padding: 0 30px;
+  align-items: center;
+  justify-content: center;
+  .container {
+    padding-top: 60px;
+    padding-bottom: 70px;
+    &-row {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+    &-title {
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 60px;
+      h2 {
+        font-size: 40px;
+        color: $Heading2;
+        font-family: 'Rubik Regular';
+        font-weight: 700;
+        margin: 0;
+        position: relative;
+        &::before {
+          content: '';
+          height: 4px;
+          width: 50px;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: $pink-color;
+        }
+        &::after {
+          content: '';
+          height: 4px;
+          width: 25px;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          margin-top: 8px;
+          background-color: $pink-color;
+        }
+      }
+    }
+  }
+}
+
+//Margin & Padding classes
+
+$spaceamounts: (1, 2, 3, 4, 5);
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+  .mx-#{$space} {
+    margin: 0 #{$space}rem;
+  }
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+  .px-#{$space} {
+    padding: 0 #{$space}rem;
+  }
+}
+
+/*buttons style*/
+.buttons {
+  margin-top: 30px;
+
+  .btn {
+    font-size: 16px;
+    font-family: 'Rubik Regular';
+    font-weight: 500;
+    padding: 12px 35px;
+    color: #fff;
+    border-radius: 40px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 15px;
+    margin-top: 10px;
+
+    &:hover {
+      -webkit-transform: scale(1.05);
+      transform: scale(1.05);
+    }
+  }
+}
+
+/*use css grid*/
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+  margin-top: 30px;
+
+  &-item {
+    padding: 10px;
+
+    h3.title {
+      font-size: 24px;
+      font-weight: 700;
+      color: $Heading2;
+    }
+    .timeline {
+      background-color: $bg-light2;
+      padding: 30px 15px;
+      border: 1px solid #d4d4e3;
+      border-radius: 10px;
+      box-shadow: $box-shadow;
+      &-dot {
+        position: absolute;
+        left: 0;
+        top: 1px;
+        height: 15px;
+        width: 15px;
+        left: -7px;
+        border-radius: 50%;
+      }
+      &-date {
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 15px;
+        color: $text2;
+        .fa {
+          margin-right: 5px;
+        }
+      }
+      &-title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 15px;
+        text-transform: capitalize;
+      }
+      &-text {
+        font-size: 16px;
+        line-height: 25px;
+        color: $text2;
+        margin: 0;
+        padding-bottom: 40px;
+      }
+      &-item {
+        position: relative;
+        padding-left: 20px;
+
+        &::before {
+          content: '';
+          width: 1px;
+          height: 100%;
+          left: 0px;
+          top: 0;
+
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  width: 100%;
+  margin-top: 30px;
+}
+/*media query*/
+@media(max-width:992px){
+  .grid3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+@media(max-width:768px){
+  .grid3 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,66 @@
+$font-stack: Arial, Helvetica, sans-serif;
+$light-color: #f4f4f4;
+$dark-bg: #0e0e17;
+$danger-color: #bc0609;
+$orange-color: #ff9301;
+$blue-color: #2196f3;
+$yellow-color: #ffb400;
+$green-color: #72b626;
+$pink-color: #ec1839;
+
+/*Body-Dark*/
+$bg-dark: #151515;
+$bg-light: #222222;
+$Heading: #ffff;
+$text: #e9e9e9;
+$border: #393939;
+
+/*Body-Light*/
+$bg-dark2: #f2f2fc;
+$bg-light2: #fdf9ff;
+$Heading2: #302e4d;
+$text2: #504e70;
+$borderD: #d4d4e3;
+$borderL: #e8dfec;
+
+
+/*shadow*/
+
+  $box-shadow:0 0 20px rgba(48,46,77,.15);
+.box-shadow{
+  box-shadow: 0 0 20px rgba(48,46,77,.15);
+}
+
+//set text color based on bg
+@function set-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+//set background & text color
+
+// @mixin set-background($color) {
+//   background-color: $color !important;
+//   color: set-text-color($color) !important;
+// }
+// @mixin set-background2($color) {
+//   background-color: $color;
+//   color: set-text-color($color);
+// }
+@mixin borderBefore($color) {
+  border-top: 4px solid $color;
+  border-left: 4px solid $color;
+}
+@mixin borderAfter($color) {
+  border-bottom: 4px solid $color;
+  border-right: 4px solid $color;
+}
+@mixin  colorText($color) {
+  color:$color ;
+}
+@mixin  background-Color($color) {
+  background-color: $color;
+}

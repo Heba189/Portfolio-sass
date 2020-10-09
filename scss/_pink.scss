@@ -1,0 +1,97 @@
+.container {
+  &-aside {
+    .logo {
+      a {
+        &::before {
+          @include borderBefore($pink-color);
+        }
+        &::after {
+          @include borderAfter($pink-color);
+        }
+      }
+    }
+    .nav {
+      li {
+        a {
+          &:not(.active):hover {
+            @include colorText($pink-color);
+          }
+          &.active {
+            @include colorText($pink-color);
+          }
+        }
+      }
+    }
+    .nav-toggler {
+      span {
+        @include background-Color($pink-color);
+        &::before {
+          @include background-Color($pink-color);
+        }
+        &::after {
+          @include background-Color($pink-color);
+        }
+      }
+    }
+  }
+
+  &-home {
+    .social-links {
+      margin-top: 25px;
+      a {
+        @include background-Color($pink-color);
+      }
+    }
+
+    /*about*/
+    .about-content {
+      h3 {
+        span {
+          @include colorText($pink-color);
+        }
+      }
+    }
+  }
+}
+
+/*btn*/
+.btn {
+  @include background-Color($pink-color);
+}
+
+/*progress*/
+.progress {
+  .progress-in {
+    background-color: $pink-color;
+  }
+}
+
+.timeline-item::before,
+.timeline-item .timeline-dot {
+  background-color: $pink-color;
+}
+
+/*icon services*/
+.service {
+  &-item-inner {
+    .icon{
+      .fa,.fas,.far{
+       color: $pink-color;
+      -webkit-transition: all .3s ease;
+      transition: all .3s ease ;
+      }
+      &:hover {
+        background-color: $pink-color;
+        .fa,.fas,.far{
+            font-size: 25px;
+            color: #fff;
+        }
+      }
+    }
+   
+
+
+  }
+
+ 
+}
